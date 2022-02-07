@@ -4,6 +4,7 @@
     border-bottom: 1px solid rgba($dark, .08);
     z-index: 12;
     transition: background-color .3s ease-in-out, box-shadow .3s ease-in-out;
+    background-color: rgb(177, 177, 177);
     &.sticky{
         background-color: $white;
         box-shadow: 0 2px 10px rgba($black, .25);
@@ -20,11 +21,17 @@
     }
 
     &__left{
-
+        @media (max-width: 767px){
+            display: none;
+        }
     }
 
     &__right{
         display: flex;
+        @media (max-width: 767px){
+            width: 100%;
+            justify-content: space-between;
+        }
     }
 
     &__nav {
@@ -32,11 +39,17 @@
 
     &__menu-list {
         display: flex;
+        @media(max-width: 992px){
+            display: none;
+        }
     }
 
     &__menu-item {
         &+&{
             margin-left: 64px;
+            @media(max-width: 1200px){
+                margin-left: 40px;
+            }
         }
     }
 
@@ -72,6 +85,18 @@
     &__languges-list {
         display: flex;
         margin-right: 155px;
+        @media(max-width: 1200px){
+            margin-right: 100px;
+        }
+        @media(max-width: 992px){
+            margin-right: 240px;
+        }
+        @media (max-width: 767px){
+            margin-right: 0;
+        }
+        @media(max-width: 567px){
+            display: none;
+        }
     }
 
     &__languages-item {
@@ -94,11 +119,26 @@
 
     &__profile-menu {
         display: flex;
+        @media(max-width: 567px){
+            width: 100%;
+        }
     }
 
     &__profile-item {
         &+&{
             margin-left: 40px;
+        }
+    }
+
+    &__profile-item--enter{
+        @media(max-width: 767px){
+            display: none;
+        }
+    }
+
+    &__profile-item--phone{
+        @media(max-width: 567px){
+            display: none;
         }
     }
 
@@ -130,6 +170,28 @@
         letter-spacing: 0.08em;
         text-transform: uppercase;
         transition: color .3s ease-in-out;
+    }
+
+    &__profile-item--pos{
+        margin-left: 0;
+        @media(min-width: 767px){
+            display: none;
+        }
+    }
+
+    &__profile-link--pos{
+        width: 15px;
+        height: 100%;
+        img{
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+        @media(max-width: 567px){
+            height: 25px;
+        }
     }
 
     &__profile-border{
