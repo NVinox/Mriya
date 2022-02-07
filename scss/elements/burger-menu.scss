@@ -1,0 +1,112 @@
+.overlay {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: calc(100% - 80px);
+    z-index: 15;
+    display: flex;
+    width: 100%;
+    transition: left 0.3s ease-in-out, right 0.3s ease-in-out;
+    &.active{
+        left: 0;
+    }
+}
+.burger {
+
+		&__content {
+            background-color: $background;
+            width: calc(100% - 80px);
+		}
+
+		&__menu {
+            display: flex;
+            align-items: center;
+            padding: 8px 217px 15px 50px;
+            border-bottom: 1px solid rgba(#C4C4C4, .08);
+            .header__profile-link--enter{
+                margin-left: auto;
+                .header__profile-border{
+                    z-index: 15;
+                }
+                svg{
+                    stroke: $white;
+                }
+            }
+		}
+
+		&__menu-logo {
+		}
+
+		&__menu-img {
+		}
+
+		&__menu-nav {
+            margin-left: 48px;
+		}
+
+		&__menu-list {
+            display: flex;
+            align-items: center;
+		}
+
+		&__menu-item {
+            &+&{
+                margin-left: 64px;
+            }
+		}
+
+		&__menu-link {
+            color: $white;
+            font-size: 14px;
+            line-height: 25px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+		}
+}
+.burger-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    background-color: $dark;
+    &__line {
+        position: relative;
+        display: block;
+        height: 2px;
+        width: 32px;
+        background-color: $white;
+        transition: background-color .3s ease-in-out;
+        &:before,
+        &:after{
+            content: '';
+            position: absolute;
+            left: 0;
+            height: 2px;
+            background-color: $white;
+            transition: transform .3s ease-in-out, width .3s ease-in-out;
+        }
+        &:before{
+            top: -11px;
+            width: 100%;
+        }
+        &:after{
+            bottom: -11px;
+            width: 26px;
+        }
+    }
+    &.active{
+        .burger-button__line{
+            background-color: transparent;
+            &:before{
+                top: 0;
+                transform: rotate(45deg);
+            }
+            &:after{
+                bottom: 0;
+                transform: rotate(-45deg);
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,147 @@
+.header {
+    position: fixed;
+    width: 100%;
+    border-bottom: 1px solid rgba($dark, .08);
+    z-index: 12;
+    transition: background-color .3s ease-in-out, box-shadow .3s ease-in-out;
+    &.sticky{
+        background-color: $white;
+        box-shadow: 0 2px 10px rgba($black, .25);
+        .header__profile-link{
+            color: $dark;
+        }
+    }
+    &__box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 31px 0 23px;
+        font-size: 14px;
+    }
+
+    &__left{
+
+    }
+
+    &__right{
+        display: flex;
+    }
+
+    &__nav {
+    }
+
+    &__menu-list {
+        display: flex;
+    }
+
+    &__menu-item {
+        &+&{
+            margin-left: 64px;
+        }
+    }
+
+    &__menu-link {
+        color: $dark;
+        font-size: 14px;
+        line-height: 25px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+    }
+
+    &__logo {
+        position: absolute;
+        background-color: $white;
+        bottom: -4px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: $indexabs;
+    }
+
+    &__logo-link {
+
+    }
+
+    &__logo-img{
+        display: block;
+        margin: 0 auto;
+        & + &{
+            margin-top: 10px;
+        }
+    }
+
+    &__languges-list {
+        display: flex;
+        margin-right: 155px;
+    }
+
+    &__languages-item {
+        &+&{
+            margin-left: 25px;
+        }
+    }
+
+    &__languages-link {
+        color: $dark;
+        font-size: 14px;
+        line-height: 25px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba($black, .24);
+        &.active{
+            color: $dark;
+        }
+    }
+
+    &__profile-menu {
+        display: flex;
+    }
+
+    &__profile-item {
+        &+&{
+            margin-left: 40px;
+        }
+    }
+
+    &__profile-link--enter {
+        position: relative;
+        padding-left: 23px;
+        background-color: transparent;
+        &:before{
+            position: absolute;
+            content: '';
+            top: 50%;
+            left: 0;
+            width: 15px;
+            height: 8px;
+            transform: translateY(-50%);
+            background-image: url('../img/key.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+    }
+
+    &__profile-link {
+        position: relative;
+        display: block;
+        color: $white;
+        font-size: 14px;
+        line-height: 25px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        transition: color .3s ease-in-out;
+    }
+
+    &__profile-border{
+        position: absolute;
+        bottom: 2px;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        z-index: -1;
+        svg{
+            stroke-dasharray: 2 2;
+            stroke: $white;
+        }
+    }
+}

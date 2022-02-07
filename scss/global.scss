@@ -1,0 +1,128 @@
+// FONTS
+// SangBleuKingdom
+@font-face {
+	font-family: 'SangBleuKingdom';
+	src: url('../fonts/SangBleuKingdom-Regular-WebXL.eot');
+	src: local('☺'), url('../fonts/SangBleuKingdom-Regular-WebXL.woff') format('woff'), url('../fonts/SangBleuKingdom-Regular-WebXL.ttf') format('truetype'), url('../fonts/SangBleuKingdom-Regular-WebXL.svg') format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'SangBleuKingdom';
+	src: url('../fonts/SangBleuKingdom-Bold-WebXL.eot');
+	src: local('☺'), url('../fonts/SangBleuKingdom-Bold-WebXL.woff') format('woff'), url('../fonts/SangBleuKingdom-Bold-WebXL.ttf') format('truetype'), url('../fonts/SangBleuKingdom-Bold-WebXL.svg') format('svg');
+	font-weight: 700;
+	font-style: normal;
+}
+// Euclid Circular B
+@font-face {
+	font-family: 'EuclidCircularB';
+	src: url('../fonts/EuclidCircularB-Light.eot');
+	src: local('☺'), url('../fonts/EuclidCircularB-Light.woff') format('woff'), url('../fonts/EuclidCircularB-Light.ttf') format('truetype'), url('../fonts/EuclidCircularB-Light.svg') format('svg');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'EuclidCircularB';
+	src: url('../fonts/EuclidCircularB-Medium.eot');
+	src: local('☺'), url('../fonts/EuclidCircularB-Medium.woff') format('woff'), url('../fonts/EuclidCircularB-Medium.ttf') format('truetype'), url('../fonts/EuclidCircularB-Medium.svg') format('svg');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'EuclidCircularB';
+	src: url('../fonts/EuclidCircularB-SemiBold.eot');
+	src: local('☺'), url('../fonts/EuclidCircularB-SemiBold.woff') format('woff'), url('../fonts/EuclidCircularB-SemiBold.ttf') format('truetype'), url('../fonts/EuclidCircularB-SemiBold.svg') format('svg');
+	font-weight: 600;
+	font-style: normal;
+}
+// ===========================
+
+body{
+    height: 100%;
+    font-family: 'EuclidCircularB', sans-serif;
+    font-weight: 500;
+    color: $dark;
+}
+
+.body{
+	&.hidden{
+		overflow: hidden;
+	}
+}
+
+::-webkit-scrollbar {
+    width: 6px; /* ширина для вертикального скролла */
+	padding: 0 15px 0 0;
+    background-color: transparent;
+}
+
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+    background-color: rgba($gold, .32);
+    border-radius: 8px;
+}
+
+.page{
+    position: relative;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main{
+    flex: 1 1 auto;
+}
+
+.container{
+    max-width: 1190px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.btn{
+	display: inline-block;
+	font-size: 15px;
+	font-weight: 500;
+	padding: 20px 48px;
+	line-height: 24px;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	border-radius: 8px;
+	color: $white;
+	background-color: $btn;
+	transition: background-color .3s ease-in-out;
+	&:hover{
+		background-color: darken($btn, 5%);
+	}
+}
+
+.ghost-btn {
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 24px;
+	background-color: transparent;
+	border: 1px solid $gold;
+	color: $dark;
+	transition: background-color .3s ease-in-out, color .3s ease-in-out;
+	&:hover{
+		background-color: $gold;
+		color: $white;
+	}
+}
+
+::-webkit-calendar-picker-indicator {
+	background-image: url('../img/rellax/date.svg');
+}
+
+.section-title {
+    font-family: 'SangBleuKingdom', serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 56px;
+    margin-bottom: 50px;
+}

@@ -1,0 +1,105 @@
+.burger {
+
+    &__slider {
+        position: relative;
+        flex: 0 1 32.8%;
+        margin-left: auto;
+        margin-top: -30px;
+        min-width: 0;
+        overflow: hidden;
+    }
+
+    &__slider-wrapper {
+    }
+
+    &__slider-slide {
+        overflow: hidden;
+    }
+
+    &__slider-image{
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &__slider-href{
+        position: relative;
+        display: block;
+        z-index: 12;
+        overflow: hidden;
+        &:before{
+            position: absolute;
+            content: '';
+            bottom: 0;
+            left: 0;
+            width: 720px;
+            height: 720px;
+            transform: translate(-50%, 57.5%);
+            border-radius: 50%;
+            background-color: rgba($black, .48);
+            z-index: 10;
+        }
+    }
+
+    &__slider-box {
+        position: absolute;
+        bottom: 40px;
+        left: 40px;
+        z-index: 15; 
+    }
+
+    &__slider-offer {
+        
+    }
+
+    &__slider-title {
+        font-family: 'SangBleuKingdom', serif;
+        font-size: 40px;
+        line-height: 56px;
+        font-weight: 700;
+        color: $white;
+    }
+
+    &__slider-time {
+        font-size: 24px;
+        margin-bottom: 25px;
+        line-height: 32px;
+        font-weight: 300;
+        color: $white;
+    }
+
+    &__slider-more {
+        
+    }
+}
+
+.swiper-pagination{
+    right: 40px;
+    bottom: 40px;
+    .swiper-pagination-bullet{
+        width: 16px;
+        height: 16px;
+        background-color: $white;
+        margin: 0 8px;
+    }
+    .swiper-pagination-bullet-active{
+        position: relative;
+        background-color: $gold;
+        &:before{
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            width: 24px;
+            height: 24px;
+            border: 1px solid $gold;
+            border-right: none;
+            border-bottom: none;
+            border-radius: 50%;
+        }
+    }
+    &.swiper-pagination-horizontal{
+        width: 80px;
+        bottom: 40px;
+        margin-left: auto;
+    }
+}

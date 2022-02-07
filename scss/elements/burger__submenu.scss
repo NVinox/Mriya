@@ -1,0 +1,101 @@
+.burger {
+
+    &__submenu-list {
+        position: relative;
+        padding: 0 12px 0 56px;
+        border-left: 1px solid rgba($gold, .24);
+        // border-right: 1px solid rgba($gold, .24);
+        max-height: 552px;
+        overflow-y: auto;
+        &::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 1px;
+            background-color: rgba($gold, .24);
+        }
+    }
+
+    &__submenu-item {
+    }
+
+    &__submenu-fall {
+        display: flex;
+        flex-direction: column;
+        padding: 9px 0 34px 54px;
+        max-width: 390px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .2s ease-in-out;
+        &:hover{
+            opacity: 1;
+            pointer-events: auto;
+        }
+        &.active{
+            opacity: 1;
+            pointer-events: auto;
+        }
+    }
+
+    &__submenu-fall-item {
+        padding: 0 90px 0 0;
+        &+&{
+            margin-top: 30px;
+        }
+        &:last-child{
+            font-size: 16px;
+            font-weight: 300;
+            margin-top: auto;
+            padding: 0;
+            line-height: 24px;
+            color: $white;
+            opacity: 48%;
+        }
+    }
+
+    &__submenu-fall-item--info{
+        
+    }
+
+    &__submenu-fall-link {
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 32px;
+        color: $white;
+        transition: color .3s ease-in-out;
+        &:hover{
+            color: $gold;
+        }
+    }
+
+    &__submenu-link {
+        display: block;
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 32px;
+        padding: 15px 24px;
+        border-radius: 8px;
+        color: $white;
+        transition: background-color .3s ease-in-out;
+        &:hover{
+            background-color: rgba($gold, .16);
+        }
+    }
+    &__submenu-item--medical{
+        position: relative;
+        &::after{
+            position: absolute;
+            content: '';
+            top: 50%;
+            right: 24px;
+            transform: translateY(-50%) rotate(45deg);
+            width: 10px;
+            height: 10px;
+            border: 3px solid rgba($white, .24);
+            border-left: none;
+            border-bottom: none;
+            pointer-events: none;
+        }
+    }
+}

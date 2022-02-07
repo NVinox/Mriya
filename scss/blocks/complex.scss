@@ -1,0 +1,59 @@
+.complex {
+    position: relative;
+    padding: 86px 0 200px;
+
+    &__offer {
+        max-width: 640px;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    &__image-pos {
+        position: absolute;
+    }
+
+    &__image-pos--left {
+        bottom: -24px;
+        left: 0;
+    }
+
+    &__image-pos--center {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &__image-pos--right {
+        top: 120px;
+        right: 0;
+    }
+
+
+    .section-title{
+        font-family: 'SangBleuKingdom', serif;
+        margin-bottom: 41px;
+    }
+
+    &__words{
+        display: block;
+        font-weight: 400;
+    }
+
+    &__image {
+        margin-bottom: 42px;
+    }
+
+    &__image-icon {
+    }
+
+    &__text {
+        font-family: 'SangBleuKingdom', serif;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 32px;
+        margin-bottom: 38px;
+    }
+    .ghost-btn{
+        padding: 20px 41px;
+    }
+}

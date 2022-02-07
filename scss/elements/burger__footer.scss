@@ -1,0 +1,21 @@
+.burger {
+
+    &__footer {
+        display: flex;
+        flex-direction: column;
+        border-top: 1px solid rgba($gold, .24);
+        padding: 24px 60px;
+    }
+
+    &__footer-link {
+        display: block;
+        align-self: flex-end;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: $white;
+        opacity: 0.64;
+    }
+}
