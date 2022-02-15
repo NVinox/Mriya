@@ -2,46 +2,56 @@
 
     &__submenu-list {
         position: relative;
-        padding: 0 12px 0 56px;
+        padding: 0 17px 0 56px;
         border-left: 1px solid rgba($gold, .24);
-        // border-right: 1px solid rgba($gold, .24);
+        margin-top: -6px;
         max-height: 552px;
         overflow-y: auto;
-        &::after{
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 1px;
-            background-color: rgba($gold, .24);
+        @media(max-width: 1330px){
+            max-width: 370px;
+        }
+        @media(max-width: 1100px){
+            max-width: 100%;
+            flex: 0 1 50%;
+        }
+        @media(max-width: 950px){
+            flex: 0 1 100%;
+        }
+        @media(max-width: 767px){
+            padding: 0 15px;
+            border-left: none;
+            margin: 0;
         }
     }
 
     &__submenu-item {
+        @media(max-width: 767px){
+            border-bottom: 1px solid rgba($gold, .08);
+        }
     }
 
     &__submenu-fall {
         display: flex;
         flex-direction: column;
-        padding: 9px 0 34px 54px;
+        padding: 9px 0 34px 55px;
         max-width: 390px;
         opacity: 0;
         pointer-events: none;
         transition: opacity .2s ease-in-out;
-        &:hover{
-            opacity: 1;
-            pointer-events: auto;
+        @media(max-width: 1330px){
+            max-width: 300px;
+            padding-left: 20px;
+            padding-right: 10px;
         }
-        &.active{
-            opacity: 1;
-            pointer-events: auto;
+        @media(max-width: 1100px){
+            display: none;
         }
     }
 
     &__submenu-fall-item {
         padding: 0 90px 0 0;
         &+&{
-            margin-top: 30px;
+            margin-top: 32px;
         }
         &:last-child{
             font-size: 16px;
@@ -74,28 +84,76 @@
         font-size: 24px;
         font-weight: 300;
         line-height: 32px;
-        padding: 15px 24px;
+        padding: 15px 18px 17px 24px;
         border-radius: 8px;
         color: $white;
         transition: background-color .3s ease-in-out;
         &:hover{
             background-color: rgba($gold, .16);
         }
-    }
-    &__submenu-item--medical{
-        position: relative;
-        &::after{
-            position: absolute;
-            content: '';
-            top: 50%;
-            right: 24px;
-            transform: translateY(-50%) rotate(45deg);
-            width: 10px;
-            height: 10px;
-            border: 3px solid rgba($white, .24);
-            border-left: none;
-            border-bottom: none;
-            pointer-events: none;
+        @media(max-width: 767px){
+            margin: 0 -15px;
+            padding: 13px 18px 10px 16px;
         }
+        @media(max-width: 576px){
+            font-size: 20px;
+        }
+    }
+}
+
+.js-medical{
+    position: relative;
+    &::after{
+        position: absolute;
+        content: '';
+        top: 30px;
+        right: 31px;
+        transform: translateY(-50%) rotate(45deg);
+        width: 10px;
+        height: 10px;
+        border: 3px solid rgba($white, .24);
+        border-left: none;
+        border-bottom: none;
+        pointer-events: none;
+        @media(max-width: 767px){
+            right: 7px;
+        }
+    }
+    .hidden-menu{
+        @media(min-width: 1101px){
+            display: none;
+        }
+        padding: 24px 17px;
+        display: none;
+        &.visible{
+            display: block;
+        }
+        li{
+            max-width: 253px;
+        }
+        li+li{
+            margin-top: 16px;
+        }
+        a{
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 24px;
+            color: $white;
+            transition: color .3 ease-in-out;
+            &:hover{
+                color: $gold;
+            }
+        }
+    }
+}
+
+.js-burger__submenu-fall{
+    &:hover{
+        opacity: 1;
+        pointer-events: auto;
+    }
+    &.active{
+        opacity: 1;
+        pointer-events: auto;
     }
 }

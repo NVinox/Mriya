@@ -2,8 +2,13 @@
 
     &__media-box{
         position: relative;
-        display: flex;
-        padding: 30px 0 0 83px;
+        padding: 31px 0 0 83px;
+        @media(min-width: 768px){
+            display: flex;
+        }
+        @media(max-width: 767px){
+            padding: 0;
+        }
     }
 
     &__media {
@@ -13,6 +18,9 @@
         padding-top: 32px;
         background-color: $background;
         z-index: 10;
+        @media(max-width: 767px){
+            display: none;
+        }
     }
 
     &__media-list {

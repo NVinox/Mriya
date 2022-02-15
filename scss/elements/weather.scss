@@ -1,0 +1,61 @@
+.weather {
+    position: absolute;
+    bottom: 32px;
+    left: 73.4%;
+
+    &__temp {
+        position: relative;
+        font-size: 48px;
+        line-height: 56px;
+        color: $white;
+        padding-left: 83px;
+        &::before{
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 59px;
+            height: 40px;
+            transform: translateY(-57%);
+            background-image: url('../img/offer/cloud.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+    }
+
+    &__prec {
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 32px;
+        color: $white;
+        margin-bottom: 5px;
+        padding-left: 83px;
+    }
+
+    &__pos {
+        position: relative;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 24px;
+        color: $white;
+        padding-left: 83px;
+        background-color: transparent;
+        &::before{
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 47px;
+            width: 12px;
+            height: 16px;
+            transform: translateY(-50%);
+            background-image: url('../img/offer/pin.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+    }
+    @media(max-width: 768px){
+        display: none;
+    }
+}

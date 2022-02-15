@@ -1,4 +1,7 @@
 .footer {
     padding: 103px 0;
     text-align: center;
+    @media(max-width: 767px){
+        padding: 144px 0;
+    }
 }

@@ -48,14 +48,18 @@ body{
     color: $dark;
 }
 
-.body{
-	&.hidden{
-		overflow: hidden;
-	}
+.js-body{
+	// &.hidden{
+	// 	overflow: hidden;
+	// 	// @media(max-width: 767px){
+	// 	// 	overflow: visible;
+	// 	// }
+	// }
 }
 
 ::-webkit-scrollbar {
     width: 6px; /* ширина для вертикального скролла */
+	height: 1px; /* ширина для горизонтального скролла */
 	padding: 0 15px 0 0;
     background-color: transparent;
 }
@@ -71,6 +75,7 @@ body{
     min-height: 100%;
     display: flex;
     flex-direction: column;
+	overflow: hidden;
 }
 
 .main{
@@ -99,7 +104,7 @@ body{
 	font-weight: 500;
 	padding: 20px 48px;
 	line-height: 24px;
-	letter-spacing: 0.08em;
+	letter-spacing: 0.03em;
 	text-transform: uppercase;
 	border-radius: 8px;
 	color: $white;
@@ -134,4 +139,8 @@ body{
     font-size: 40px;
     line-height: 56px;
     margin-bottom: 50px;
+	@media(max-width: 576px){
+		font-size: 24px;
+		margin-bottom: 13px;
+	}
 }

@@ -1,10 +1,95 @@
 .burger {
 
     &__footer {
-        display: flex;
-        flex-direction: column;
         border-top: 1px solid rgba($gold, .24);
         padding: 24px 60px;
+        @media(min-width: 768px){
+            display: flex;
+            flex-direction: column;
+        }
+        @media(max-width: 767px){
+            padding: 39px 16px;
+        }
+        .offer__btn-num{
+            @media(min-width: 768px){
+                display: none;
+            }
+            @media(max-width: 767px){
+                display: block;
+                max-width: 100%;
+                margin-bottom: 44px;
+            }
+        }
+        nav{
+            @media(min-width: 768px){
+                display: none;
+            }
+            @media(max-width: 767px){
+                margin-bottom: 3px;
+            }
+            ul{
+                @media(max-width: 767px){
+                    display: block;
+                    padding: 0;
+                    text-align: center;
+                }
+            }
+            li{
+                @media(max-width: 767px){
+                    display: inline-block;
+                    margin: 0 12px 14px;
+                }
+                &+&{
+                    @media(max-width: 767px){
+                        margin-left: 0;
+                    }
+                }
+            }
+            a{
+    
+            }
+        }
+        .burger__media{
+            @media(min-width: 768px){
+                display: none;
+            }
+            @media(max-width: 767px){
+                display: contents;
+                position: relative;
+                padding-top: 0;
+            }
+            ul{
+                @media(max-width: 767px){
+                    display: flex;
+                    justify-content: space-between;
+                    max-width: 192px;
+                    width: 100%;
+                    padding: 0;
+                    text-align: center;
+                    margin: 0 auto 34px;
+                }
+            }
+            li{
+                
+            }
+            li+li{
+               margin-top: 0;
+            }
+            a{
+                
+            }
+        }
+        .header__profile-link{
+            @media(max-width: 767px){
+                display: block;
+                text-align: center;
+                text-transform: uppercase;
+                margin-bottom: 16px;
+            }
+            @media(min-width: 768px){
+                display: none;
+            }
+        }
     }
 
     &__footer-link {
@@ -17,5 +102,8 @@
         text-transform: uppercase;
         color: $white;
         opacity: 0.64;
+        @media(max-width: 767px){
+            text-align: center;
+        }
     }
 }
