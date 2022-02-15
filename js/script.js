@@ -1,5 +1,19 @@
 document.addEventListener("DOMContentLoaded", function (event) {
 
+    // Polifill forEach for Enternet Explorer
+
+    if (!Array.prototype.forEach) {
+
+        Array.prototype.forEach = function (callback, thisArg) {
+      
+          var T, k;
+      
+          if (this == null) {
+            throw new TypeError(' this is null or not defined');
+          }
+        }
+    }
+
     // Languages
     const langBtn = document.querySelectorAll('.js-languages-btn');
 
