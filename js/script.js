@@ -35,13 +35,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
     const submenuFall = document.querySelector('.js-burger__submenu-fall');
     const hiddenMenu = document.querySelector('.hidden-menu');
 
-
     medical.addEventListener('mouseover', function(){
         submenuFall.classList.add('active');
     });
 
-    medical.addEventListener('click', ()=>{
+    medical.addEventListener('click', function(){
         hiddenMenu.classList.toggle('visible');
+        this.classList.toggle('active');
     });
 
     medical.addEventListener('mouseout', () => setTimeout(function(){
