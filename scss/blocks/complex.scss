@@ -1,6 +1,7 @@
 .complex {
     position: relative;
     padding: 86px 0;
+    z-index: 30;
 
     @media(max-width: 767px){
         padding: 86px 0 0;

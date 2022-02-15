@@ -2,8 +2,9 @@
     position: relative;
     overflow-x: clip;
     padding: 78px 0 45px;
+    z-index: 30;
     @media(max-width: 567px){
-        padding: 159px 0 25px;
+        padding: 78px 0 25px;
     }
 
     &__background {
@@ -14,6 +15,12 @@
     &__background--first{
         left: 21%;
         top: 0;
+        @media(max-width: 1380px){
+            left: 15%;
+        }
+        @media(max-width: 1200px){
+            left: 10%;
+        }
     }
 
     &__background--weather{

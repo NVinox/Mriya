@@ -6,6 +6,7 @@
     right: calc(100% - 80px);
     z-index: 25;
     transition: left 0.3s ease-in-out, right 0.3s ease-in-out, background-color .3s ease-in-out;
+    // pointer-events: none;
     &__box{
         display: flex;
         position: relative;
@@ -20,6 +21,7 @@
     &.active{
         left: 0;
         background-color: rgba($white, .64);
+        z-index: 35;
     }
 }
 
@@ -41,6 +43,7 @@
             .header__profile-link--enter{
                 margin-left: auto;
                 padding-top: 15px;
+                color: $white;
                 .header__key-svg{
                     margin-top: 8px;
                 }
@@ -97,12 +100,6 @@
                 background-color: $dark;
                 border: none;
             }
-		}
-
-		&__menu-logo {
-		}
-
-		&__menu-img {
 		}
 
 		&__menu-nav {

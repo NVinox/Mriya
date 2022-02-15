@@ -1,12 +1,5 @@
 document.addEventListener("DOMContentLoaded", function (event) {
 
-    // // Header
-    // window.addEventListener("scroll", function () {
-    //     let header = document.querySelector('.header');
-    //     let scrollUp = document.querySelector('.scroll-up');
-    //     header.classList.toggle('sticky', window.scrollY > 0);
-    // });
-
     // Languages
     const langBtn = document.querySelectorAll('.js-languages-btn');
 
@@ -22,14 +15,21 @@ document.addEventListener("DOMContentLoaded", function (event) {
     // Overlay
     const burgerBtn = document.querySelector('.js-burger-button');
     const overlay = document.querySelector('.js-overlay');
+    const overlaySizes = document.querySelector('.js-overlay__box');
+    const page = document.querySelector('.js-page');
     const body = document.querySelector('.js-body');
 
-    function changeClass (){
+    burgerBtn.addEventListener('click', function(){
         burgerBtn.classList.toggle('active');
         overlay.classList.toggle('active');
-    }
+        body.classList.toggle('hidden');
 
-    burgerBtn.addEventListener('click', changeClass);
+        if(overlay.classList.contains('active') && overlaySizes.offsetWidth <= 767){
+            page.style.maxHeight = `${overlaySizes.offsetHeight}px`;
+        }else{
+            page.style.maxHeight = `none`;
+        }
+    });
 
     const medical = document.querySelector('.js-medical');
     const submenuFall = document.querySelector('.js-burger__submenu-fall');
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     medical.addEventListener('mouseout', () => setTimeout(function(){
         submenuFall.classList.remove('active');
-    }, 300));
+    }, 300));    
 
     // Rellax Slider
     const slider = new Swiper('.burger__slider', {
@@ -127,12 +127,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
             prevEl: '.swiper-button-prev',
           },
         breakpoints: {
-            // when window width is >= 320px
-            320: {
+            280: {
+                slidesPerView: 1,
+                spaceBetween: 20
+            },
+            361: {
+                slidesPerView: 1.3,
+                spaceBetween: 20
+            },
+            520: {
                 slidesPerView: 2,
                 spaceBetween: 20
             },
-            // when window width is >= 480px
             992: {
                 slidesPerView: 3,
                 spaceBetween: 30
@@ -148,10 +154,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
           btnPrev = document.querySelector('.js-all__btn-prev'),
           btnNext = document.querySelector('.js-all__btn-next'),
           slidesToShow = 1,
+          slidesMargin = 30,
           slidesToScroll = 1,
           itemsCount = items.length;
           itemWidth = container.clientWidth / slidesToShow,
-          movePosition = (slidesToScroll * itemWidth);
+          movePosition = (slidesToScroll * itemWidth) + slidesMargin;
 
     items.forEach(item => {
         item.style.minWidth = `${itemWidth}px`;
@@ -160,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     btnNext.addEventListener('click', () => {
         const itemsLeft = itemsCount - (Math.abs(position) + slidesToShow * itemWidth) / itemWidth;
 
-        position -= itemsLeft >= slidesToScroll ? movePosition : itemsLeft * itemWidth;
+        position -= itemsLeft >= slidesToScroll ? movePosition : itemsLeft * itemWidth + slidesMargin * (itemsCount - 1);
         setPosition();
         checkBtns();
     });
@@ -181,5 +188,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
         btnPrev.disabled = position === 0;
         btnNext.disabled = position <= -(itemsCount - slidesToShow) * itemWidth;
     }
+
+    // Scrolling
+        //=========================================
+        const anchor = document.querySelector('.js-offer__link');
+        
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const blockID = anchor.getAttribute('href').substr(1);
+
+            document.getElementById(blockID).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
 
 });

@@ -80,6 +80,7 @@
             }
         }
         .header__profile-link{
+            color: $white;
             @media(max-width: 767px){
                 display: block;
                 text-align: center;

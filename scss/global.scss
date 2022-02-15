@@ -48,13 +48,11 @@ body{
     color: $dark;
 }
 
-.js-body{
-	// &.hidden{
-	// 	overflow: hidden;
-	// 	// @media(max-width: 767px){
-	// 	// 	overflow: visible;
-	// 	// }
-	// }
+.js-body.hidden{
+	overflow: hidden;
+	@media(max-width: 767px){
+		overflow: visible;
+	}
 }
 
 ::-webkit-scrollbar {
